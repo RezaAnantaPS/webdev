@@ -21,7 +21,7 @@ let luffy = {
 //cactus
 let cactusArray = [];
 
-let cactus1Width = 34;
+let cactus1Width = 43;
 let cactus2Width = 69;
 let cactus3Width = 102;
 
@@ -34,7 +34,7 @@ let cactus2Img;
 let cactus3Img;
 
 //physics
-let velocityX = -8; //cactus moving left speed
+let velocityX = -6; //cactus moving left speed
 let velocityY = 0;
 let gravity = 0.4;
 
@@ -50,8 +50,9 @@ let numFrames = 3; // Jumlah frame animasi
 
 // Variabel yang mengontrol loncatan
 let isJumping = false;
+let isRunning = true;
 let jumpHeight = 130;
-let jumpDuration = 300;
+let jumpDuration = 500;
 let jumpStartTime;
 
 // Inisialisasi gambar-gambar animasi
@@ -101,6 +102,15 @@ let currentFrame = 0;
 let lastFrameTime = Date.now();
 let frameCount = 0;
 let ducking = false;
+// Hitung jumlah frame yang dibutuhkan untuk melompat selama jumpDuration
+let numJumpFrames = Math.ceil(jumpDuration / frameInterval);
+
+// Sesuaikan frameInterval agar setiap frame lompatan berlangsung selama jumpDuration / numJumpFrames
+if (numJumpFrames > numFrames) {
+  numJumpFrames = numFrames;
+}
+
+frameInterval = jumpDuration / numJumpFrames;
 
 function update() {
   requestAnimationFrame(update);
@@ -113,8 +123,8 @@ function update() {
     let gameOverY = (boardHeight - gameOverImg.height) / 2;
     context.drawImage(gameOverImg, gameOverX, gameOverY);
 
-    context.fillStyle = "white";
-    context.font = "36px Arial";
+    context.fillStyle = "black";
+    context.font = "30px courier";
     let scoreText = "Score: " + score;
     let scoreWidth = context.measureText(scoreText).width;
     let scoreX = (boardWidth - scoreWidth) / 2;
@@ -127,29 +137,54 @@ function update() {
 
   //luffy
   velocityY += gravity;
+
+  // Simpan posisi vertikal karakter sebelum lompat
+  let prevY = luffy.y;
+
   luffy.y = Math.min(luffy.y + velocityY, luffyY);
 
-  // Animasi berlari
   let currentTime = Date.now();
-  if (isRunning && currentTime - lastFrameTime > frameInterval) {
-    currentFrame = (currentFrame + 1) % numFrames;
-    lastFrameTime = currentTime;
-  }
-  context.drawImage(
-    runFrames[currentFrame],
-    luffy.x,
-    luffy.y,
-    luffy.width,
-    luffy.height
-  );
 
-  // Animasi loncat
-  if (isJumping) {
+  // Animasi berlari
+  if (isRunning) {
+    if (currentTime - lastFrameTime > frameInterval) {
+      currentFrame = (currentFrame + 1) % numFrames;
+      lastFrameTime = currentTime;
+    }
+    context.drawImage(
+      runFrames[currentFrame],
+      luffy.x,
+      luffy.y,
+      luffy.width,
+      luffy.height
+    );
+  } else if (isJumping) {
+    // Animasi loncat
     let elapsedTime = currentTime - jumpStartTime;
     if (elapsedTime < jumpDuration) {
+      // Hitung indeks frame lompatan yang akan digambar
+      let jumpFrameIndex = Math.floor(
+        (elapsedTime / jumpDuration) * numJumpFrames
+      );
+
+      // Pastikan indeks frame tidak melebihi jumlah frame lompatan yang tersedia
+      if (jumpFrameIndex >= numJumpFrames) {
+        jumpFrameIndex = numJumpFrames - 1;
+      }
+
       luffy.y = luffyY - jumpHeight * (elapsedTime / jumpDuration);
+
+      // Menggunakan jumpFrame dengan indeks yang sesuai
+      context.drawImage(
+        jumpFrames[jumpFrameIndex],
+        luffy.x,
+        luffy.y,
+        luffy.width,
+        luffy.height
+      );
     } else {
-      luffy.y = luffyY;
+      // Set posisi karakter ke tanah saat lompatan selesai
+      luffy.y = prevY;
       isJumping = false;
       isRunning = true;
     }
@@ -157,7 +192,13 @@ function update() {
 
   // Animasi merunduk
   if (ducking) {
-    context.drawImage(duckFrames[0], luffy.x, luffy.y, luffy.width, luffy.height);
+    context.drawImage(
+      duckFrames[0],
+      luffy.x,
+      luffy.y,
+      luffy.width,
+      luffy.height
+    );
   }
 
   //cactus
@@ -176,7 +217,13 @@ function update() {
       gameOver = true;
       luffyImg.src = "assets/img/death.png";
       luffyImg.onload = function () {
-        context.drawImage(luffyImg, luffy.x, luffy.y, luffy.width, luffy.height);
+        context.drawImage(
+          luffyImg,
+          luffy.x,
+          luffy.y,
+          luffy.width,
+          luffy.height
+        );
       };
     }
   }
@@ -190,6 +237,7 @@ function update() {
 
 function moveluffy(e) {
   if (gameOver) {
+    location.reload();
     return;
   }
 
@@ -242,9 +290,9 @@ function placeCactus() {
 
 function detectCollision(a, b) {
   return (
-    a.x < b.x + b.width &&
-    a.x + a.width > b.x &&
-    a.y < b.y + b.height &&
-    a.y + a.height > b.y
+    a.x <= b.x + b.width &&
+    a.x + a.width >= b.x &&
+    a.y <= b.y + b.height &&
+    a.y + a.height >= b.y
   );
 }
