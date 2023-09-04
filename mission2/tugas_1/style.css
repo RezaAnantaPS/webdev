@@ -1,0 +1,88 @@
+body{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.title{
+    padding-top: 30px;
+    padding-left: 55px ;
+}
+
+.items{
+    padding: 1rem 2rem;
+    justify-content: space-evenly;
+}
+
+.card{
+    width: 15rem;
+    padding: 1rem 1rem;
+}
+
+.input-group{
+    width: 100%;
+    padding-bottom: 1rem;
+    display: flex;
+}
+
+.btn-input{
+    width: 100%
+}
+
+.my-cart{
+    padding: 1rem 2rem;
+}
+
+.cart{
+    padding: 0 2rem;
+}
+
+.cart img{
+    width: 100px;
+}
+
+.card-img-top {
+  max-height: 200px; 
+  height: auto; 
+}
+
+.total-price{
+    width: 85%;
+    margin-left: 5rem;
+}
+
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.item-details {
+  display: flex;
+  align-items: center;
+}
+
+.subtotal {
+  margin-right: 10px; 
+}
+
+.action-buttons {
+  display: flex;
+  gap: 5px; 
+}
+
+
+#showStrukBtn{
+    width: 10%;
+    margin-top: 1rem;
+    margin-right: 3rem;
+}
+
+.caption-top{
+    margin-bottom: 2rem;
+}
+
+.text-end{
+    margin-right: 2rem;
+}
