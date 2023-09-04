@@ -26,7 +26,7 @@ let cactus2Width = 69;
 let cactus3Width = 102;
 
 let cactusHeight = 70;
-let cactusX = 50;
+let cactusX = 700;
 let cactusY = boardHeight - cactusHeight;
 
 let cactus1Img;

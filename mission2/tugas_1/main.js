@@ -381,10 +381,10 @@ document.getElementById("showStrukBtn").addEventListener("click", function () {
 
   // Create an HTML structure for the cart details
   let cartDetailsHTML = '<table class="table caption-top">';
-  cartDetailsHTML +=
-    `<thead>
+  cartDetailsHTML += `<thead>
       <tr>
         <th>Nama Item</th>
+        <th><center>Price</center></th>
         <th><center>Quantity</center></th>
         <th><center>Subtotal</center></th>
       </tr>
@@ -397,12 +397,14 @@ document.getElementById("showStrukBtn").addEventListener("click", function () {
   // Loop through cart items and add details to the HTML structure
   for (const cartItem of cartItems) {
     const itemName = cartItem.item.name;
+    const itemPrice = cartItem.item.price;
     const itemCount = cartItem.count;
     const itemSubtotal = cartItem.item.price * itemCount;
 
     cartDetailsHTML += `
       <tr>
         <td>${itemName}</td>
+        <td class="text-center">Rp${itemPrice.toLocaleString()}</td> 
         <td class="text-center">${itemCount}</td>
         <td class="text-center">Rp${itemSubtotal.toLocaleString()}</td>
       </tr>
