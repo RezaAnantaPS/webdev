@@ -1,0 +1,101 @@
+.container{
+    width: 80%;
+    height: 90vh;
+    margin: 50px auto;
+    border: 5px solid black;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-areas: "biru hitam hitam hitam"
+                         "biru coklat putih merah-muda"
+                         "biru coklat putih biru-muda"
+                         "kuning ungu putih biru-muda"
+                         "merah ungu abu-abu abu-abu"
+                         "hijau orange abu-abu abu-abu";
+    grid-template-columns: 1fr 1fr 0.5fr 0.5fr;
+    grid-template-rows:  1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.teks{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+.teks-putih{
+    color: white;
+}
+
+.biru{
+    background-color: blue;
+    grid-area: biru;
+}
+
+.hitam{
+    background-color: black;
+    grid-area: hitam;
+}
+
+.coklat{
+    background-color: brown;
+    grid-area: coklat;
+}
+
+.putih{
+    background-color: white;
+    grid-area: putih;
+}
+
+.merah-muda{
+    background-color: pink;
+    grid-area: merah-muda;
+}
+
+.biru-muda{
+    background-color: aqua;
+    grid-area: biru-muda;
+}
+
+.kuning{
+    background-color: yellow;
+    grid-area: kuning;
+}
+
+.ungu{
+    background-color: purple;
+    grid-area: ungu;
+}
+
+.merah{
+    background-color: red;
+    grid-area: merah;
+}
+
+.abu-abu{
+    background-color: gray;
+    grid-area: abu-abu;
+}
+
+.hijau{
+    background-color: green;
+    grid-area: hijau;
+}
+
+.orange{
+    background-color: orange;
+    grid-area: orange;
+}
+
+@media screen and (max-width: 720px){
+    .teks{
+        font-size: 25px;
+    }
+
+    .container{
+        width: 100%;                     
+    }
+}

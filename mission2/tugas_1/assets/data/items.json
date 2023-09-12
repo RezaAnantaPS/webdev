@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Nasi Kuning",
+    "price": "Rp7.000",
+    "imgSrc": "assets/img/items_1.jpeg"
+  },
+  {
+    "name": "Ayam Goreng",
+    "price": "Rp15.000",
+    "imgSrc": "assets/img/items_2.jpeg"
+  },
+  {
+    "name": "Es Teh",
+    "price": "Rp3.000",
+    "imgSrc": "assets/img/items_3.jpeg"
+  },
+  {
+    "name": "Burger",
+    "price": "Rp25.000",
+    "imgSrc": "assets/img/items_4.jpeg"
+  },
+  {
+    "name": "Pizza",
+    "price": "Rp30.000",
+    "imgSrc": "assets/img/items_5.jpeg"
+  },
+  {
+    "name": "Salad",
+    "price": "Rp15.000",
+    "imgSrc": "assets/img/items_6.jpeg"
+  }
+]

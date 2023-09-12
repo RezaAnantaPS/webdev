@@ -1,0 +1,97 @@
+<!-- <div class="card">
+                    <img src="assets/img/items_1.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Nasi Kuning</h5>
+                        <p class="card-text">Rp7.000</p>
+                        <center>
+                            <div class="input-group">
+                                <button class="btn btn-primary" id="decrementBtn">-</button>
+                                <input type="text" class="form-control text-center" id="counterInput" value="0" readonly>
+                                <button class="btn btn-primary" id="incrementBtn">+</button>
+                            </div>
+                            <button type="button" class="btn-input btn btn-success">Tambah Barang</button>
+                        </center>
+                    </div>
+                </div>
+                <div class="card"">
+                    <img src="assets/img/items_1.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Nasi Kuning</h5>
+                        <p class="card-text">Rp7.000</p>
+                        <center>
+                            <div class="input-group">
+                                <button class="btn btn-primary" id="decrementBtn">-</button>
+                                <input type="text" class="form-control text-center" id="counterInput" value="0" readonly>
+                                <button class="btn btn-primary" id="incrementBtn">+</button>
+                            </div>
+                            <button type="button" class="btn-input btn btn-success">Tambah Barang</button>
+                        </center>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="assets/img/items_1.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Nasi Kuning</h5>
+                        <p class="card-text">Rp7.000</p>
+                        <center>
+                            <div class="input-group">
+                                <button class="btn btn-primary" id="decrementBtn">-</button>
+                                <input type="text" class="form-control text-center" id="counterInput" value="0" readonly>
+                                <button class="btn btn-primary" id="incrementBtn">+</button>
+                            </div>
+                            <button type="button" class="btn-input btn btn-success">Tambah Barang</button>
+                        </center>
+                    </div>
+                </div> -->
+<!-- <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <img src="assets/img/items_1.jpeg" class="card-img-top" alt="...">
+                    <div class="ms-2 me-auto ps-2 pt-4">
+                        <div class="fw-bold">Nasi Kuning</div>
+                        <div class="subtotal-item d-flex">
+                            <p>X </p>
+                            <p>2</p>
+                        </div>
+                    </div>
+                    <span class="subtotal my-auto"><b>Rp14.000</b></span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <img src="assets/img/items_1.jpeg" class="card-img-top" alt="...">
+                    <div class="ms-2 me-auto ps-2 pt-4">
+                        <div class="fw-bold">Nasi Kuning</div>
+                        <div class="subtotal-item d-flex">
+                            <p>Rp.7.000 &ThinSpace;</p>
+                            <p>X &ThinSpace;</p>
+                            <p>2</p>
+                        </div>
+                    </div>
+                    <span class="subtotal my-auto"><b>Rp.14.000</b></span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <img src="assets/img/items_1.jpeg" class="card-img-top" alt="...">
+                    <div class="ms-2 me-auto ps-2 pt-4">
+                        <div class="fw-bold">Nasi Kuning</div>
+                        <div class="subtotal-item d-flex">
+                            <p>Rp7.000 &ThinSpace;</p>
+                            <p>X &ThinSpace;</p>
+                            <p>2</p>
+                        </div>
+                    </div>
+                    <span class="subtotal my-auto"><b>Rp14.000</b></span>
+                </li> -->
+                
+                <!-- <table class="total-price table table-borderless">
+                    <tbody class="text-lg-end">
+                        <tr>
+                            <td scope="row"><b>Total Pembelian</b></td>
+                            <td>Rp14.000</td>
+                        </tr>
+                        <tr>
+                            <td scope="row"><b>Pajak 11%</b></td>
+                            <td>Rp2.000</td>
+                        </tr>
+                        <tr>
+                            <td scope="row"><b>Total Bayar</b></td>
+                            <td>Rp16.000</td>
+                        </tr>
+                    </tbody>
+                </table> -->

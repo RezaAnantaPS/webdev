@@ -1,0 +1,26 @@
+GET http://localhost:5000/users
+###
+GET http://localhost:5000/users/1
+###
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name": "Ferdy Fauzan",
+    "email": "ferdyfauzan@gmail.com",
+    "gender": "Male",
+    "age": 20
+}
+###
+PATCH  http://localhost:5000/users/1
+Content-Type: application/json
+
+{
+    "name": "Muhammad Daffa Raihandika",
+    "email": "draihandika@gmail.com",
+    "gender": "Male",
+    "age": 20
+}
+
+###
+DELETE   http://localhost:5000/users/2
